@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -42,19 +43,17 @@ namespace VigenereCypher
 
         private void btnEncode_Click(object sender, EventArgs e)
         {
-            Encode();
+           txtDecode.Text = CryptDecrypt(encode: true, txtEncode.Text);
         }
 
-        private void Encode()
+        private string CryptDecrypt(bool encode, string stringCrypt)
         {
-            string encode = txtEncode.Text.ToUpper();
-
             int chave = 0;
 
             string key = txtKey.Text.ToUpper();
             string result = "";
 
-            foreach (var item in encode)
+            foreach (var item in stringCrypt)
             {
                 var indexTexto = _chaves.IndexOf(item);
 
@@ -66,7 +65,14 @@ namespace VigenereCypher
                 }
                 else
                 {
-                    int posicao = (indexTexto + indexChave) % 36;
+                    int posicao = 0;
+                    if (encode)
+                    {
+                        posicao = (indexTexto + indexChave) % 36;
+                    } else
+                    {
+                        posicao = ((indexTexto - indexChave) + 36) % 36;
+                    }
 
                     result += _chaves[posicao];
                 }
@@ -75,44 +81,12 @@ namespace VigenereCypher
                 chave++;
             }
 
-            txtDecode.Text = result;
-        }
-
-        private void Decode()
-        {
-            string decode = txtDecode.Text.ToUpper();
-
-            int chave = 0;
-
-            string key = txtKey.Text.ToUpper();
-            string result = "";
-
-            foreach (var item in decode)
-            {
-
-                var indexTexto = _chaves.IndexOf(item);
-
-                var indexChave = _chaves.IndexOf(key[chave % key.Count()]);
-
-                if (indexTexto < 0)
-                {
-                    result += item;
-                }
-                else
-                {
-                    int posicao = ((indexTexto - indexChave) + 36) % 36;
-
-                    result += _chaves[posicao];
-                }
-                chave++;
-            }
-
-            txtEncode.Text = result;
+            return result;
         }
 
         private void btnDecode_Click(object sender, EventArgs e)
         {
-            Decode();
+            txtEncode.Text = CryptDecrypt(encode: false, txtDecode.Text);
         }
 
         private void label3_Click(object sender, EventArgs e)
