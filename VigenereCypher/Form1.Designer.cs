@@ -37,6 +37,9 @@
             this.txtDecode = new System.Windows.Forms.TextBox();
             this.txtKey = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtChaves = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnAlterarChaves = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -44,18 +47,18 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Encode";
+            this.label1.Text = "Encode:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(333, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 13);
+            this.label2.Size = new System.Drawing.Size(48, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Decode";
+            this.label2.Text = "Decode:";
             // 
             // btnEncode
             // 
@@ -101,19 +104,48 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(227, 67);
+            this.label3.Location = new System.Drawing.Point(231, 67);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(25, 13);
+            this.label3.Size = new System.Drawing.Size(28, 13);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Key";
+            this.label3.Text = "Key:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // txtChaves
+            // 
+            this.txtChaves.Location = new System.Drawing.Point(64, 146);
+            this.txtChaves.Name = "txtChaves";
+            this.txtChaves.Size = new System.Drawing.Size(425, 20);
+            this.txtChaves.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 149);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Chaves:";
+            // 
+            // btnAlterarChaves
+            // 
+            this.btnAlterarChaves.Location = new System.Drawing.Point(495, 146);
+            this.btnAlterarChaves.Name = "btnAlterarChaves";
+            this.btnAlterarChaves.Size = new System.Drawing.Size(111, 20);
+            this.btnAlterarChaves.TabIndex = 10;
+            this.btnAlterarChaves.Text = "ALTERAR CHAVES";
+            this.btnAlterarChaves.UseVisualStyleBackColor = true;
+            this.btnAlterarChaves.Click += new System.EventHandler(this.btnAlterarChaves_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(574, 110);
+            this.ClientSize = new System.Drawing.Size(618, 192);
+            this.Controls.Add(this.btnAlterarChaves);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtChaves);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtKey);
             this.Controls.Add(this.txtDecode);
@@ -140,6 +172,9 @@
         private System.Windows.Forms.TextBox txtDecode;
         private System.Windows.Forms.TextBox txtKey;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtChaves;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnAlterarChaves;
     }
 }
 

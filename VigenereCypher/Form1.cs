@@ -11,6 +11,7 @@ namespace VigenereCypher
         public Form1()
         {
             InitializeComponent();
+            txtChaves.Text = _chaves;
         }
 
         private void btnEncode_Click(object sender, EventArgs e)
@@ -20,6 +21,8 @@ namespace VigenereCypher
 
         private string CryptDecrypt(bool encode, string encDecString, string key)
         {
+            txtChaves.Text = _chaves;
+
             int chave = 0;
 
             string result = "";
@@ -40,10 +43,10 @@ namespace VigenereCypher
                     int posicao = 0;
                     if (encode)
                     {
-                        posicao = (indexTexto + indexChave) % 36;
+                        posicao = (indexTexto + indexChave) % _chaves.Count();
                     } else
                     {
-                        posicao = ((indexTexto - indexChave) + 36) % 36;
+                        posicao = ((indexTexto - indexChave) + _chaves.Count()) % _chaves.Count();
                     }
 
                     result += _chaves[posicao];
@@ -62,6 +65,11 @@ namespace VigenereCypher
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAlterarChaves_Click(object sender, EventArgs e)
+        {
+            _chaves = txtChaves.Text;
         }
     }
 }
