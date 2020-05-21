@@ -9,37 +9,13 @@ namespace VigenereCypher
     {
         string _chaves = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
-
-        int[] _pesoChave;
-
         public Form1()
         {
             InitializeComponent();
 
-            InstanciaPesoChave();
             txtKey.Text = "GXYHJ1739";
             txtEncode.Text = "E13L25235959001";
         }
-
-        private void InstanciaPesoChave()
-        {
-            _pesoChave = new int[_chaves.Length];
-
-            for (var a = 0; a < _pesoChave.Length; a++)
-            {
-                var c = _chaves[a];
-                if (c >= 'A' && c <= 'Z')
-                {
-                    _pesoChave[a] = 65;
-                }
-                else
-                {
-                    _pesoChave[a] = 48;
-                }
-
-            }
-        }
-
 
         private void btnEncode_Click(object sender, EventArgs e)
         {
@@ -76,8 +52,6 @@ namespace VigenereCypher
 
                     result += _chaves[posicao];
                 }
-
-
                 chave++;
             }
 
