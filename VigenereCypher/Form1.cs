@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing.Imaging;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -12,9 +11,6 @@ namespace VigenereCypher
         public Form1()
         {
             InitializeComponent();
-
-            txtKey.Text = "GXYHJ1739";
-            txtEncode.Text = "E13L25235959001";
         }
 
         private void btnEncode_Click(object sender, EventArgs e)
@@ -38,6 +34,7 @@ namespace VigenereCypher
                 if (indexTexto < 0)
                 {
                     result += item;
+                    continue;
                 }
                 else
                 {
