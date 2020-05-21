@@ -15,17 +15,16 @@ namespace VigenereCypher
 
         private void btnEncode_Click(object sender, EventArgs e)
         {
-           txtDecode.Text = CryptDecrypt(encode: true, txtEncode.Text);
+           txtDecode.Text = CryptDecrypt(encode: true, encDecString: txtEncode.Text, key: txtKey.Text);
         }
 
-        private string CryptDecrypt(bool encode, string stringCrypt)
+        private string CryptDecrypt(bool encode, string encDecString, string key)
         {
             int chave = 0;
 
-            string key = txtKey.Text.ToUpper();
             string result = "";
 
-            foreach (var item in stringCrypt)
+            foreach (var item in encDecString)
             {
                 var indexTexto = _chaves.IndexOf(item);
 
@@ -57,7 +56,7 @@ namespace VigenereCypher
 
         private void btnDecode_Click(object sender, EventArgs e)
         {
-            txtEncode.Text = CryptDecrypt(encode: false, txtDecode.Text);
+            txtEncode.Text = CryptDecrypt(encode: false, encDecString: txtDecode.Text, key: txtKey.Text);
         }
 
         private void label3_Click(object sender, EventArgs e)
