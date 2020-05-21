@@ -16,6 +16,8 @@ namespace VigenereCypher
             InitializeComponent();
 
             InstanciaPesoChave();
+            txtKey.Text = "GXYHJ1739";
+            txtEncode.Text = "E13L25235959001";
         }
 
         private void InstanciaPesoChave()
@@ -98,11 +100,9 @@ namespace VigenereCypher
                 }
                 else
                 {
-                    int posicao = Math.Abs(indexTexto - indexChave) % 36;
+                    int posicao = ((indexTexto - indexChave) + 36) % 36;
 
-                    var posicaoChar = _pesoChave[posicao];
-
-                    result += Convert.ToChar(posicao + posicaoChar);
+                    result += _chaves[posicao];
                 }
                 chave++;
             }
@@ -111,6 +111,11 @@ namespace VigenereCypher
         }
 
         private void btnDecode_Click(object sender, EventArgs e)
+        {
+            Decode();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

@@ -51,7 +51,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(242, 10);
+            this.label2.Location = new System.Drawing.Point(333, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 1;
@@ -59,7 +59,7 @@
             // 
             // btnEncode
             // 
-            this.btnEncode.Location = new System.Drawing.Point(143, 5);
+            this.btnEncode.Location = new System.Drawing.Point(234, 9);
             this.btnEncode.Name = "btnEncode";
             this.btnEncode.Size = new System.Drawing.Size(75, 23);
             this.btnEncode.TabIndex = 2;
@@ -69,7 +69,7 @@
             // 
             // btnDecode
             // 
-            this.btnDecode.Location = new System.Drawing.Point(143, 34);
+            this.btnDecode.Location = new System.Drawing.Point(234, 38);
             this.btnDecode.Name = "btnDecode";
             this.btnDecode.Size = new System.Drawing.Size(75, 23);
             this.btnDecode.TabIndex = 3;
@@ -81,19 +81,19 @@
             // 
             this.txtEncode.Location = new System.Drawing.Point(12, 25);
             this.txtEncode.Name = "txtEncode";
-            this.txtEncode.Size = new System.Drawing.Size(100, 20);
+            this.txtEncode.Size = new System.Drawing.Size(182, 20);
             this.txtEncode.TabIndex = 4;
             // 
             // txtDecode
             // 
-            this.txtDecode.Location = new System.Drawing.Point(245, 25);
+            this.txtDecode.Location = new System.Drawing.Point(336, 29);
             this.txtDecode.Name = "txtDecode";
-            this.txtDecode.Size = new System.Drawing.Size(100, 20);
+            this.txtDecode.Size = new System.Drawing.Size(191, 20);
             this.txtDecode.TabIndex = 5;
             // 
             // txtKey
             // 
-            this.txtKey.Location = new System.Drawing.Point(143, 79);
+            this.txtKey.Location = new System.Drawing.Point(234, 83);
             this.txtKey.Name = "txtKey";
             this.txtKey.Size = new System.Drawing.Size(100, 20);
             this.txtKey.TabIndex = 6;
@@ -101,18 +101,19 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(140, 63);
+            this.label3.Location = new System.Drawing.Point(227, 67);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(25, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "Key";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(385, 110);
+            this.ClientSize = new System.Drawing.Size(574, 110);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtKey);
             this.Controls.Add(this.txtDecode);
